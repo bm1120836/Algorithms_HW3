@@ -24,22 +24,22 @@ O(1), что более оптимально.\
 элемент стал первым. Проще всего это продемонстрировать на однонаправленном\
 списке.
 
-*public void revert() {\
+public void revert() {\
     Node node = head;
 
-    // меняем местами указатели на head и tail\
-    Node temp = head;\
-    head = tail;\
+    меняем местами указатели на head и tail\
+    Node temp = head;
+    head = tail;
     tail = temp;
 
-    // перебираем список, переворачивая указатели\
-    while (node.nextNode != null) {\
-        temp = node.nextNode;\
-        node.nextNode = node.previousNode;\
-        node.previousNode = temp;\
-        node = node.previousNode;\
-    }\
-}*
+    перебираем список, переворачивая указатели\
+    while (node.nextNode != null) {
+        temp = node.nextNode;
+        node.nextNode = node.previousNode;
+        node.previousNode = temp;
+        node = node.previousNode;
+    }
+}
 
 Таким образом нам требуется только 1 дополнительная переменная в памяти для\
 хранения значения во время замены элементов местами, что дает константную\
