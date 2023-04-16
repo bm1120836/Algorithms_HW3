@@ -27,12 +27,14 @@ O(1), что более оптимально.\
 public void revert() {\
     Node node = head;
 
-    меняем местами указатели на head и tail\
+    меняем местами указатели на head и tail
+
     Node temp = head;
     head = tail;
     tail = temp;
 
-    перебираем список, переворачивая указатели\
+    перебираем список, переворачивая указатели
+    
     while (node.nextNode != null) {
         temp = node.nextNode;
         node.nextNode = node.previousNode;
